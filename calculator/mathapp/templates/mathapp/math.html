@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-size: 20px;
+        background-color: blue;
+    }
+    .formelt {
+        color: orange;
+        text-align: center;
+        margin-top: 7px;
+        margin-bottom: 6px;
+    }
+    h1 {
+        color: rgb(255, 0, 179);
+        text-align: center;
+        padding-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="edge">
+    <div class="box">
+        <h1>Power Calculation (P = I²R)</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="formelt">
+                Intensity (I) : <input type="text" name="intensity" value="">{{ "(in A)" }}<br/>
+            </div>
+            <div class="formelt">
+                Resistance (R) : <input type="text" name="resistance" value="">{{ "(in Ω)" }}<br/>
+            </div>
+            <div class="formelt">
+                <input type="submit" value="Calculate"><br/>
+            </div>
+            <div class="formelt">
+                Power (P) : <input type="text" name="power" value="{{ power }}">W<br/>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
